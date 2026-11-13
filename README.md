@@ -4,9 +4,10 @@
 
 ## 構成
 
-- `server.js` … Express で `public/` を配信（Railway の `PORT` を使用、`0.0.0.0` で待ち受け）
-- `public/index.html` … 1ページ構成（サービス／車検／修理・整備／ケア／販売／お知らせ／会社概要・アクセス）
-- `public/style.css` / `public/main.js`
+- `server.js` … Express。`views/layout.html` に `views/pages/*.html` を差し込んで返す（Railway の `PORT` を使用、`0.0.0.0` で待ち受け）
+- ページ：トップ／車検／修理・整備／洗車・ケア／販売／お知らせ／会社案内
+- メニュー：ヘッダー（主要ページ）、トップの「目的から探す」、下層のページ内メニュー＋関連サービス、フッターのサイトマップ
+- `public/style.css` / `public/main.js`（トップのヒーローはスクロールで青→白に変化）
 - `railway.json` … 起動コマンドとヘルスチェック（`/health`）
 
 ## ローカル起動
