@@ -16,10 +16,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// ===== トップのヒーロー：スクロールに合わせて青→白に変える =====
+// ===== トップ：スクロールに合わせてページ全体の背景を青→白に変える =====
 const hero = document.getElementById("hero");
 const heroInner = document.getElementById("heroInner");
 const floatCall = document.querySelector(".float-call");
+const header = document.querySelector(".header");
 
 if (hero) {
   const from = [47, 106, 163]; // #2f6aa3
@@ -29,7 +30,10 @@ if (hero) {
   const update = () => {
     // ヒーローの高さの7割スクロールしたら完全に白になる
     const t = Math.min(Math.max(window.scrollY / (hero.offsetHeight * 0.7), 0), 1);
-    hero.style.setProperty("--hero-bg", `rgb(${mix(t)})`);
+    // ページ全体（ヘッダー含む）の背景を青→白に変える
+    document.documentElement.style.setProperty("--page-bg", `rgb(${mix(t)})`);
+    // 背景がまだ青いうちはヘッダーの文字を白にする
+    header.classList.toggle("is-on-blue", t < 0.5);
     // 文字は背景が白くなりきる前にフェードアウトさせて、読みにくい中間色の時間をなくす
     const fade = Math.max(1 - t * 1.6, 0);
     heroInner.style.opacity = fade;

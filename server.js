@@ -32,7 +32,9 @@ for (const [url, p] of Object.entries(pages)) {
     .replaceAll("{{PAGE}}", p.nav)
     .replace("{{BODY}}", body)
     // 今いるページのメニューに印をつける
-    .replaceAll(`data-nav="${p.nav}"`, `data-nav="${p.nav}" aria-current="page"`);
+    .replaceAll(`data-nav="${p.nav}"`, `data-nav="${p.nav}" aria-current="page"`)
+    // トップは最初から背景が青なので、ヘッダーも白文字で表示しておく（読み込み時のチラつき防止）
+    .replace('<header class="header">', p.nav === "home" ? '<header class="header is-on-blue">' : '<header class="header">');
 }
 
 app.use(express.static(path.join(__dirname, "public")));
