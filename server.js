@@ -14,6 +14,7 @@ const pages = {
   "/inspection": { file: "inspection", nav: "inspection", title: "車検｜サンプル自動車",                      desc: "認証工場で点検から整備まで。代車の無料貸出もあります。" },
   "/repair":     { file: "repair",     nav: "repair",     title: "修理・整備｜サンプル自動車",                desc: "ブレーキ、タイヤ、オイル、バッテリーなど、修理・整備はおまかせください。" },
   "/care":       { file: "care",       nav: "care",       title: "洗車・クリーニング｜サンプル自動車",        desc: "エアコン洗浄、車内クリーニング、エンジンケアの進化剤。" },
+  "/care/steam-cleaner": { file: "steam", nav: "care", title: "スーパースチームクリーナーⅡ（車内クリーニング）｜サンプル自動車", desc: "約75℃の高温水でシートを洗って吸い取る車内クリーニング。シミ・ニオイ・ダニやカビに。" },
   "/sale":       { file: "sale",       nav: "sale",       title: "新車・中古車販売｜サンプル自動車",          desc: "国内外の多数メーカーの新車から中古車まで。購入後のメンテナンスも一貫対応。" },
   "/news":       { file: "news",       nav: "news",       title: "お知らせ｜サンプル自動車",                  desc: "サンプル自動車からのお知らせ。" },
   "/company":    { file: "company",    nav: "company",    title: "会社案内・アクセス｜サンプル自動車",        desc: "会社概要、所在地、お問い合わせ先。" },
