@@ -4,6 +4,8 @@ const nav = document.getElementById("nav");
 
 const setMenu = (open) => {
   nav.classList.toggle("is-open", open);
+  // メニューを開いている間はヘッダーを白背景＋濃い文字にする
+  document.querySelector(".header").classList.toggle("is-menu-open", open);
   menuBtn.classList.toggle("is-open", open);
   menuBtn.setAttribute("aria-expanded", String(open));
   menuBtn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
